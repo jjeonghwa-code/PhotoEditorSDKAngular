@@ -37032,21 +37032,140 @@
             ],
             FONTS: [
               {
-                name: "helvetica",
-                fontFamily: "Helvetica",
-                fontWeight: "normal"
-              },
-              { name: "verdana", fontFamily: "Verdana", fontWeight: "normal" },
-              {
-                name: "timesnewroman",
-                fontFamily: "Times New Roman",
-                fontWeight: "normal"
+                name: "Pridi",
+                fontFamily: "Pridi, serif",
+                fontWeight: "normal",
+                default: true
               },
               {
                 name: "impact",
                 fontFamily: "Impact",
-                fontWeight: "normal",
-                default: true
+                fontWeight: "normal"
+              },
+              {
+                name: "Kanit",
+                fontFamily: "Kanit', sans-serif",
+                fontWeight: "bold"
+              },
+              {
+                name: "Taviraj",
+                fontFamily: "Taviraj, serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Mitr",
+                fontFamily: "Mitr, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Itim",
+                fontFamily: "Itim, cursive",
+                fontWeight: "normal"
+              },
+              {
+                name: "Maitree",
+                fontFamily: "Maitree, serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Pattaya",
+                fontFamily: "Pattaya, serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Trirong",
+                fontFamily: "Trirong, serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Niramit",
+                fontFamily: "Niramit, sans-serif;",
+                fontWeight: "normal"
+              },
+              {
+                name: "Sriracha",
+                fontFamily: "Sriracha, cursive",
+                fontWeight: "normal"
+              },
+              {
+                name: "K2D",
+                fontFamily: "K2D, serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Charm",
+                fontFamily: "Charm, cursive",
+                fontWeight: "normal"
+              },
+              {
+                name: "Sarabun",
+                fontFamily: "Sarabun, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Athiti",
+                fontFamily: "Athiti, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Mali",
+                fontFamily: "Mali, cursive",
+                fontWeight: "normal"
+              },
+              {
+                name: "Bai Jamjuree",
+                fontFamily: "Bai Jamjuree, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Krub",
+                fontFamily: "Krub, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Chonburi",
+                fontFamily: "Chonburi, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "KoHo",
+                fontFamily: "KoHo, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Fahkwang",
+                fontFamily: "Fahkwang, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Kodchasan",
+                fontFamily: "Kodchasan, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Chakra Petch",
+                fontFamily: "Chakra Petch, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "Charmonman",
+                fontFamily: "Charmonman, sans-serif",
+                fontWeight: "normal"
+              },
+              {
+                name: "helvetica",
+                fontFamily: "Helvetica",
+                fontWeight: "normal"
+              },
+              { 
+                name: "verdana",
+                fontFamily: "Verdana",
+                fontWeight: "normal" 
+              },
+              {
+                name: "timesnewroman",
+                fontFamily: "Times New Roman",
+                fontWeight: "normal"
               }
             ],
             STICKER_CATEGORIES: [
@@ -55302,7 +55421,7 @@
           }
           if (nativeEvent.type === "keydown" || nativeEvent.type === "keyup") {
             // While user keyboard layout determines the actual meaning of each
-            // `keyCode` value, almost all function keys have a universal value.
+            // `keyCode` value, almost all function keys have a universal value.f
             return translateToKey[nativeEvent.keyCode] || "Unidentified";
           }
           return "";
