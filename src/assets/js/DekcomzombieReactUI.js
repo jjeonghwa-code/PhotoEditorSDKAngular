@@ -19686,7 +19686,7 @@
         Object.defineProperty(exports, "Library", {
           enumerable: true,
           get: function get() {
-            return _interopRequireDefault(_library).default;
+            return _interopRequireDefault(_image).default;
           }
         });
 
@@ -27962,6 +27962,7 @@
           value: true
         });
 
+
         var _classCallCheck2 = __webpack_require__(0);
 
         var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
@@ -28037,7 +28038,8 @@
 
               // Give it some time to display the loading modal
               setTimeout(function() {
-                editor.export(exportOptions.download).then(function() {
+                editor.export(exportOptions.download).then(function(res) {
+                  console.log('res', res);
                   loadingModal.close();
                 });
               }, 100);
@@ -28066,6 +28068,7 @@
 
           return ExportButtonComponent;
         })(_globals.BaseComponent); /** @jsx ReactBEM.createElement **/
+
 
         exports.default = ExportButtonComponent;
 
@@ -28161,8 +28164,7 @@
           NewFileButtonComponent.prototype._onButtonClick = function _onButtonClick() {
             var options = this.context.options;
 
-            var webcamEnabled =
-              options.enableWebcam === false || _globals.Utils.isMobile();
+            var webcamEnabled = options.enableWebcam === false || _globals.Utils.isMobile();
             var photoRollEnabled = !!options.photoRoll.provider;
             if (webcamEnabled && !photoRollEnabled) {
               this.refs.upload.open();
@@ -33292,6 +33294,10 @@
             var height = canvasCell.offsetHeight;
             renderer.setCanvas(canvas);
             renderer.resizeTo(new _globals.Vector2(width, height));
+          };
+
+          CanvasComponent.prototype.getContext = function getContext() {
+            return CanvasComponent;
           };
 
           // -------------------------------------------------------------------------- DRAGGING
@@ -56586,6 +56592,10 @@
 
         var PhotoRoll = _interopRequireWildcard(_photoRoll);
 
+        var _canvasComponent = __webpack_require__(232);
+
+        var _canvasComponent2 = _interopRequireDefault(_canvasComponent).default;
+
         var _controls = __webpack_require__(12);
 
         var _controls2 = _interopRequireDefault(_controls);
@@ -56809,7 +56819,7 @@
               photoRoll: {},
 
               enableUpload: true,
-              enableWebcam: true,
+              enableWebcam: false,
 
               showCloseButton: false,
               showHeader: true,
@@ -56889,8 +56899,8 @@
                 format: "image/png",
                 type: _globals.RenderType.IMAGE,
                 download: true,
-                fileBasename: "dekcomzombiesdk-export",
-                quality: 0.8
+                fileBasename: "dekcomzombie-export",
+                quality: 1
               }
             );
 
@@ -57149,6 +57159,7 @@
         ReactUI.ModalManager = _modalManager2.default;
         ReactUI.JSONLoader = _jsonLoader2.default;
         ReactUI.PhotoRoll = PhotoRoll;
+        ReactUI.CanvasComponent = _canvasComponent2;
 
         /**
          * The DekcomzombieSDK UI can also be integrated as a React.js component
@@ -57202,7 +57213,6 @@
 
         /***/
       }
-      /******/
     ]
   );
 });

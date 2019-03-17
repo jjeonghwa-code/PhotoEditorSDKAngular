@@ -26,10 +26,7 @@
               "src/styles.css",
               "src/assets/css/DekcomzombieReactUI.css"
             ],
-            "scripts": [
-              "src/assets/js/DekcomzombieSDK.js",
-              "src/assets/js/DekcomzombieReactUI.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import * as DekcomzombieSDK from 'src/assets/js/DekcomzombieSDK.js';
+import * as DekcomzombieReactUI from 'src/assets/js/DekcomzombieReactUI.js';
 
-declare let window: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,17 +9,23 @@ declare let window: any;
 })
 export class AppComponent implements OnInit {
 
-  constructor() { }
-
   editor: any;
 
   myImage: any;
+
+  dekcomzombieSDK: any = DekcomzombieSDK;
+  dekcomzombieReactUI: any = DekcomzombieReactUI;
+
+  constructor() {
+  }
+
+
+
 
   @ViewChild('container')
   container: ElementRef;
 
   UnsplashProvider: any;
-
 
   title = 'DekcomzombieSDKAngular';
 
@@ -26,17 +33,25 @@ export class AppComponent implements OnInit {
     this.runLibrary();
   }
 
+  readFile(): void {
+    console.log('contextA', this.dekcomzombieReactUI.getImage());
+  }
+
   runLibrary(): void {
-    const ReactUI = window.DekcomzombieSDK.UI.ReactUI;
-    const _DekcomzombieSDK = window.DekcomzombieSDK;
-    const Promise = _DekcomzombieSDK.Promise;
+    console.log('dekcomzombieSDK', this.dekcomzombieSDK);
+    console.log('dekcomzombieReactUI', this.dekcomzombieReactUI);
+
+    const ReactUI = this.dekcomzombieReactUI;
+    const _DekcomzombieSDK = this.dekcomzombieSDK;
+    const Promise = this.dekcomzombieSDK.Promise;
 
 
     function inherits(subClass, superClass) {
       if (typeof superClass !== 'function' && superClass !== null) {
         throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
-      } subClass.prototype = Object.create(superClass && superClass.prototype,
-        { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
+      }
+      subClass.prototype = Object.create(superClass && superClass.prototype,
+        {constructor: {value: subClass, enumerable: false, writable: true, configurable: true}});
       if (superClass) {
         Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
       }
@@ -56,9 +71,9 @@ export class AppComponent implements OnInit {
     }
 
 
-
     this.UnsplashProvider = function (_ReactUI$PhotoRoll$Pr) {
       inherits(UnsplashProvider, _ReactUI$PhotoRoll$Pr);
+
       function UnsplashProvider(args: any) {
         classCallCheck(this, UnsplashProvider);
 
@@ -141,9 +156,6 @@ export class AppComponent implements OnInit {
       return UnsplashProvider;
     }(ReactUI.PhotoRoll.Provider);
 
-    console.log('window', window);
-    console.log('window', ReactUI);
-
     this.editor = new ReactUI({
       container: this.container.nativeElement,
       logLevel: 'info',
@@ -163,6 +175,8 @@ export class AppComponent implements OnInit {
       responsive: true,
       language: 'en'
     });
+
+    console.log('editor', this.editor);
     this.myImage = new Image();
     this.myImage.src = 'https://img.com/static/img/img-logo.png';
   }
