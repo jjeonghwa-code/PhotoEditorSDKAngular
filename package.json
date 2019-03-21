@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --aot",
+    "build": "ng build --prod --aot --base-href https://5c93144d96877400094c8ec9--laughing-ride-5c2f7b.netlify.com/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
